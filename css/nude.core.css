@@ -1,0 +1,198 @@
+html
+{
+  font-size: var(--font-size);
+  line-height: var(--line-height);
+}
+
+body
+{
+  font-family: var(--font-family);
+  margin: auto;
+  max-width: 720px;
+  overflow-wrap: break-word;
+  text-rendering: optimizeLegibility;
+  tab-size: var(--tab-size);
+  word-break: keep-all;
+  word-wrap: break-word;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6
+{
+  margin-top: 0;
+  margin-bottom: 1.6rem;
+  line-height: 1.6em;
+  font-weight: 200;
+  letter-spacing: 0.08rem;
+}
+
+h1
+{
+  font-size: 2.488rem;
+}
+
+h2
+{
+  font-size: 2.074rem;
+}
+
+h3
+{
+  font-size: 1.728rem;
+}
+
+h4
+{
+  font-size: 1.44rem;
+}
+
+h5
+{
+  font-size: 1.2rem;
+}
+
+h6
+{
+  font-size: 1rem;
+}
+
+/* Text Content */
+
+a, a:visited, a:hover {
+  text-decoration: none;
+  color: var(--color-primary);
+}
+
+p, ol, ul, figure, hr, dl {
+  margin-top: 0;
+  font-weight: 300;
+  letter-spacing: 0.02rem;
+  margin-bottom: 1.6rem;
+}
+
+p {
+  letter-spacing: 0.02rem;
+}
+
+p, blockquote{
+  max-width: 70ch;
+}
+
+code, pre, kbd, samp
+{
+  font-family: var(--font-family-mono);
+  font-size: 1rem;
+  margin-bottom: 1.6rem;
+  margin-top: 0;
+}
+
+blockquote
+{
+  margin-top: 0;
+  font-weight: 200;
+  letter-spacing: 0.08rem;
+  font-size: 1.2rem;
+  line-height: 1.6em;
+  border-left: 0.1rem solid;
+  padding-left: 1.5rem;
+  font-style: oblique;
+}
+
+q {
+  letter-spacing: 0.08rem;
+  font-style: italic;
+  font-weight: 200;
+}
+
+hr
+{
+  margin-top: 0;
+  margin-bottom: 1.6rem;
+  border-top: 1px solid;
+  width: 35ch;
+}
+
+img, video
+{
+  height: auto;
+  margin-top: 0;
+  margin-bottom: 1.6rem;
+}
+
+img
+{
+  width: 100%;
+}
+
+abbr[title]
+{
+  border-bottom: none;
+  text-decoration: underline;
+  text-decoration: underline dotted;
+  text-decoration-style: dotted;
+}
+
+b, strong
+{
+  font-weight: bolder;
+}
+
+strong {
+  letter-spacing: 0.08rem;
+}
+
+small
+{
+  font-size: 0.8rem;
+}
+
+sub, sup
+{
+  position: relative;
+  line-height: 0;
+  font-size: 0.694rem;
+}
+
+sub
+{
+  bottom: -0.1rem;
+}
+
+sup
+{
+  top: -0.1rem;
+}
+
+fieldset
+{
+  padding: 0.35em 0.75em 0.625em;
+}
+
+button, input, optgroup, select, textarea
+{
+  font-family: inherit;
+  font-size: 1rem;
+  line-height: var(--line-height);
+  text-transform: none;
+  margin: 0;
+}
+
+legend
+{
+  box-sizing: border-box;
+  color: inherit;
+  display: table;
+  max-width: 100%;
+  padding: 0;
+  white-space: normal;
+}
+
+details
+{
+
+}
+
+summary
+{
+
+}
