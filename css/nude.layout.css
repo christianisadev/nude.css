@@ -1,0 +1,13 @@
+header {
+    width: 100%;
+}
+
+footer {
+    width: 100%;
+}
+
+main {
+    background-color: #ffffff;
+    padding: 0 1rem 0 1rem;
+    margin: 0 auto;
+}

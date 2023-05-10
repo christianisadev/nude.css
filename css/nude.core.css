@@ -7,8 +7,9 @@ html
 body
 {
   font-family: var(--font-family);
-  margin: auto;
-  max-width: 720px;
+  color: var(--color-black);
+  margin: 0;
+  background-color: #fff9fe;
   overflow-wrap: break-word;
   text-rendering: optimizeLegibility;
   tab-size: var(--tab-size);
@@ -73,6 +74,10 @@ p, ol, ul, figure, hr, dl {
   margin-bottom: 1.6rem;
 }
 
+ul {
+  list-style-type: circle;
+}
+
 p {
   letter-spacing: 0.02rem;
 }
@@ -93,12 +98,15 @@ blockquote
 {
   box-sizing: border-box;
   margin-top: 0;
+  margin-left: 2rem;
   font-weight: 200;
   letter-spacing: 0.08rem;
   font-size: 1.44rem;
-  line-height: 1.6em;
-  border-left: 1px solid;
-  padding-left: 1.5rem;
+  line-height: var(--line-height);
+  border-left: 2px solid var(--color-primary);
+  padding-left: 2rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
   font-style: oblique;
 }
 
@@ -113,8 +121,8 @@ hr
   margin-top: 0;
   margin-bottom: 1.6rem;
   border: 0;
-  border-top: 1px solid;
-  width: 35ch;
+  border-top: 2px solid var(--color-primary);
+  width: 14ch;
 }
 
 img, video
@@ -199,25 +207,34 @@ summary
 
 /* A nice table element */
 table {
-  text-align: justify;
   width: 100%;
   border-collapse: collapse;
   margin-top: 0;
   margin-bottom: var(--line-height);
+  border-spacing: 0.2rem;
 }
 
 td, th {
   padding: 0.5rem;
   line-height: var(--line-height);
-  border-bottom: 1px solid;
+  border-bottom: 1px solid var(--color-page-accent);
 }
 
 th {
   letter-spacing: 0.08rem;
+  color: var(--color-primary);
   font-size: 1.2rem;
   font-weight: 200;
 }
 
 td {
   font-weight: 300;
+}
+
+tbody tr:nth-child(even) {
+  background-color: var(--color-container);
+}
+
+tbody tr:nth-child(odd) {
+  background-color: var(--color-primary);
 }
