@@ -78,6 +78,10 @@ ul {
   list-style-type: circle;
 }
 
+li {
+  margin-bottom: 0.4rem;
+}
+
 p {
   letter-spacing: 0.02rem;
 }
@@ -128,13 +132,9 @@ hr
 img, video
 {
   height: auto;
+  width: 100%;
   margin-top: 0;
   margin-bottom: 1.6rem;
-}
-
-img
-{
-  width: 100%;
 }
 
 abbr[title]
@@ -208,6 +208,7 @@ summary
 /* A nice table element */
 table {
   width: 100%;
+  text-align: justify;
   border-collapse: collapse;
   margin-top: 0;
   margin-bottom: var(--line-height);
@@ -237,4 +238,19 @@ tbody tr:nth-child(even) {
 
 tbody tr:nth-child(odd) {
   background-color: var(--color-primary);
+}
+
+input, textarea {
+  margin-top: 0;
+  margin-bottom: 1.6rem;
+  line-height: 1.6em;
+  align-self: center;
+}
+
+input {
+  width: 42ch;
+}
+
+textarea {
+  width: 70ch;
 }
