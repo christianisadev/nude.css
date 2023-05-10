@@ -57,10 +57,13 @@ h6
 }
 
 /* Text Content */
-
 a, a:visited, a:hover {
   text-decoration: none;
   color: var(--color-primary);
+}
+
+b, strong {
+  font-weight: 600;
 }
 
 p, ol, ul, figure, hr, dl {
@@ -88,12 +91,13 @@ code, pre, kbd, samp
 
 blockquote
 {
+  box-sizing: border-box;
   margin-top: 0;
   font-weight: 200;
   letter-spacing: 0.08rem;
-  font-size: 1.2rem;
+  font-size: 1.44rem;
   line-height: 1.6em;
-  border-left: 0.1rem solid;
+  border-left: 1px solid;
   padding-left: 1.5rem;
   font-style: oblique;
 }
@@ -108,6 +112,7 @@ hr
 {
   margin-top: 0;
   margin-bottom: 1.6rem;
+  border: 0;
   border-top: 1px solid;
   width: 35ch;
 }
@@ -130,11 +135,6 @@ abbr[title]
   text-decoration: underline;
   text-decoration: underline dotted;
   text-decoration-style: dotted;
-}
-
-b, strong
-{
-  font-weight: bolder;
 }
 
 strong {
@@ -195,4 +195,29 @@ details
 summary
 {
 
+}
+
+/* A nice table element */
+table {
+  text-align: justify;
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 0;
+  margin-bottom: var(--line-height);
+}
+
+td, th {
+  padding: 0.5rem;
+  line-height: var(--line-height);
+  border-bottom: 1px solid;
+}
+
+th {
+  letter-spacing: 0.08rem;
+  font-size: 1.2rem;
+  font-weight: 200;
+}
+
+td {
+  font-weight: 300;
 }
