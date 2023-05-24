@@ -12,3 +12,6 @@ main {
     margin: 0 auto;
     max-width: 70ch;
 }
+
+/* responsive should handle width below certain point */
+/* Font size becomes 16px */
