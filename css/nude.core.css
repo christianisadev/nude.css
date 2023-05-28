@@ -1,3 +1,14 @@
+:root {
+  --font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, helvetica, Cantarell, Ubuntu, roboto, noto, arial, sans-serif;
+  --font-family-mono: Menlo, Consolas, Monaco, Liberation Mono, Lucida Console, monospace;
+  --font-size: 18px;
+  --line-height: 1.6;
+  --rhythm-spacing: 1.6rem;
+  --color-primary: #FDCFF3;
+  --color-page-accent: #fff9fe;
+  --color-black: #070707;
+}
+
 html
 {
   font-size: var(--font-size);
@@ -6,23 +17,22 @@ html
 
 body
 {
-  font-family: var(--font-family);
-  color: var(--color-black);
-  margin: 0;
   background-color: var(--color-page-accent);
+  color: var(--color-black);
+  font-family: var(--font-family);
+  margin: 0;
   overflow-wrap: break-word;
-  text-rendering: optimizeLegibility;
   tab-size: 4;
+  text-rendering: optimizeLegibility;
   word-break: keep-all;
   word-wrap: break-word;
 }
 
-/* Headings */
 h1, h2, h3, h4, h5, h6
 {
-  margin: 0 0 1.6rem 0;
   font-weight: 100;
   letter-spacing: 0.08rem;
+  margin: 0 0 var(--rhythm-spacing) 0;
 }
 
 h1
@@ -56,9 +66,14 @@ h6
 }
 
 /* Text Content */
-a, a:visited, a:hover {
+a, a:visited {
   text-decoration: none;
+  transition: 0.5s;
   color: var(--color-primary);
+}
+
+a:hover {
+  text-decoration: underline;
 }
 
 b, strong {
@@ -92,13 +107,30 @@ sup
 }
 
 p, ol, ul, figure, hr, dl {
-  margin: 0 0 1.6rem 0;
+  margin: 0 0 var(--rhythm-spacing) 0;
   font-weight: 200;
   letter-spacing: 0.02rem;
 }
 
-p, blockquote{
-  max-width: 70ch;
+ul > ol, ol > ul {
+  margin-bottom: 0;
+}
+
+ul, ol {
+  padding-left: 0.8rem;
+}
+
+li::marker {
+  color: var(--color-primary);
+  font-weight: 100;
+}
+
+ul {
+  list-style-type: circle;
+}
+
+ol {
+  list-style-type: upper-roman;
 }
 
 pre, kbd, samp, code, var
@@ -106,10 +138,10 @@ pre, kbd, samp, code, var
   font-family: var(--font-family-mono);
 }
 
-code, blockquote {
-  border-left: 2px solid var(--color-primary);
-  padding: 1rem 0 1rem 1rem;
-  margin: 0 0 1.6rem 0;
+blockquote, code {
+  border-left: 1px solid var(--color-primary);
+  padding: calc(var(--rhythm-spacing)/2) 0 calc(var(--rhythm-spacing)/2) var(--rhythm-spacing);
+  margin: 0 0 var(--rhythm-spacing) 0;
 }
 
 code {
@@ -119,7 +151,6 @@ code {
 
 blockquote
 {
-  margin: 0 0 1.6rem 0;
   font-weight: 100;
   letter-spacing: 0.08rem;
   font-size: 1.2rem;
@@ -127,16 +158,20 @@ blockquote
 }
 
 q {
-  letter-spacing: 0.08rem;
+  letter-spacing: 0.02rem;
   font-style: italic;
-  font-weight: 100;
+  font-weight: 200;
+}
+
+q::before, q::after {
+  color: var(--color-primary)
 }
 
 hr
 {
-  margin: auto auto 1.6rem auto;
+  margin: 0 auto var(--rhythm-spacing) auto;
   border: 0;
-  border-top: 2px solid var(--color-primary);
+  border-top: 1px solid var(--color-primary);
   width: 21ch;
 }
 
@@ -145,7 +180,7 @@ img, video
   height: auto;
   width: 100%;
   margin-top: 0;
-  margin-bottom: 1.6rem;
+  margin-bottom: var(--rhythm-spacing);
 }
 
 abbr[title]
@@ -166,6 +201,7 @@ button, input, optgroup, select, textarea
   font-family: inherit;
   font-size: 1rem;
   letter-spacing: 0.02rem;
+  font-weight: 200;
   line-height: var(--line-height);
   text-transform: none;
   margin: 0;
@@ -181,19 +217,45 @@ legend
   white-space: normal;
 }
 
-details {
-  margin-bottom: 1.6em;
+details:last-of-type {
+  margin: 0 0 var(--rhythm-spacing) 0;
 }
 
-details > summary
-{
+details > summary {
+  display: block;
   font-size: 1.2rem;
   font-weight: 200;
   letter-spacing: 0.08rem;
+  border-bottom: 1px solid var(--color-primary);
+}
+
+summary::before {
+  color: var(--color-primary);
+  transition: 0.5s;
+  content: '\003E';
+  font-size: 1.2rem;
+  margin-right: calc(var(--rhythm-spacing)/2);
+  display: inline-block;
+  transition: 0.1s;
+}
+
+details[open] summary::before {
+  transform: rotate(90deg);
+}
+
+details[open] > summary {
+  border-bottom: none;
+}
+
+details[open] {
+  border-bottom: 1px solid var(--color-primary);
 }
 
 details > p {
   margin-bottom: 0;
+  transition: 0.5s;
+  padding-left: 30px;
+  background-color: var(--color-page-accent);
 }
 
 /* A nice table element */
@@ -201,11 +263,11 @@ table {
   width: 100%;
   text-align: justify;
   border-collapse: collapse;
-  margin-bottom: 1.6em;
+  margin: 0 0 var(--rhythm-spacing) 0;
 }
 
 td, th {
-  padding: 0.5rem;
+  padding: calc(var(--rhythm-spacing)/2);
   line-height: var(--line-height);
   border: 0;
 }
@@ -213,32 +275,44 @@ td, th {
 th {
   letter-spacing: 0.08rem;
   font-size: 1.2rem;
-  font-weight: 200;
+  font-weight: 100;
 }
 
 td {
-  font-weight: 300;
+  font-weight: 200;
 }
 
 tbody tr:nth-child(even) {
-  background-color: var(--color-page-accent);
+  background-color: #ffffff;
 }
 
 tbody tr:nth-child(odd) {
-  background-color: var(--color-primary);
+  background-color: var(--color-page-accent);
 }
 
 input, textarea {
-  margin-top: 0;
-  margin-bottom: 1.6rem;
+  margin: 0 0 var(--rhythm-spacing) 0;
   line-height: var(--line-height);
   align-self: center;
+  border: 2px solid var(--color-page-accent);
+  -webkit-transition: 0.5s;
+  width: 100%;
+  transition: 0.5s;
+  box-sizing: border-box;
+  outline: none;
 }
 
-input {
-  width: 42ch;
+input:focus, textarea:focus {
+  border: 2px solid var(--color-primary);
 }
 
-textarea {
-  width: 70ch;
+button {
+  background-color: var(--color-page-accent);
+  border: 2px solid var(--color-primary);
+  padding: 0.5rem;
+  transition-duration: 0.5s;
+}
+
+button:hover {
+  background-color: var(--color-primary);
 }

@@ -1,12 +1,12 @@
 /**
-* This is a collection of corrections provided by Github user necolas in normalize.css.
-* Check out the original normmalize.css here : github.com/necolas/normalize.css
-* Respectfully, I don't care about IE support.
+* This is a collection of corrections provided by normmalize.css here : github.com/necolas/normalize.css
 */
+
 html {
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
 }
+
 button,
 [type="button"],
 [type="reset"],
@@ -20,6 +20,7 @@ button::-moz-focus-inner,
   border-style: none;
   padding: 0;
 }
+
 button:-moz-focusring,
 [type="button"]:-moz-focusring,
 [type="reset"]:-moz-focusring,
@@ -30,13 +31,16 @@ button:-moz-focusring,
 [type="number"]::-webkit-outer-spin-button {
   height: auto;
 }
+
 [type="search"] {
   -webkit-appearance: textfield;
   outline-offset: -2px; 
 }
+
 [type="search"]::-webkit-search-decoration {
   -webkit-appearance: none;
 }
+
 ::-webkit-file-upload-button {
   -webkit-appearance: button; 
   font: inherit; 
