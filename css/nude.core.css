@@ -4,11 +4,16 @@
   --font-size: 18px;
   --line-height: 1.6;
   --rhythm-spacing: 1.6rem;
-  --color-primary: #FDCFF3;
-  --color-page-accent: #fff9fe;
+  --color-primary: #622569;
+  --color-page-accent: #d6d4e0;
   --color-black: #070707;
 }
 
+/* Color Schemes
+Seafoam : #49796b / #a3c1ad;
+Silph : 622569 / d6d4e0
+Helix : #a2836e / #fff2df (contrast issue small headers)
+*/
 html
 {
   font-size: var(--font-size);
@@ -33,6 +38,7 @@ h1, h2, h3, h4, h5, h6
   font-weight: 100;
   letter-spacing: 0.08rem;
   margin: 0 0 var(--rhythm-spacing) 0;
+  color: var(--color-primary);
 }
 
 h1
@@ -80,7 +86,7 @@ b, strong {
   font-weight: 600;
 }
 
-strong {
+strong, em{
   letter-spacing: 0.08rem;
 }
 
@@ -138,14 +144,13 @@ pre, kbd, samp, code, var
   font-family: var(--font-family-mono);
 }
 
-blockquote, code {
-  border-left: 1px solid var(--color-primary);
+blockquote, pre {
+  border-left: 4px solid var(--color-primary);
   padding: calc(var(--rhythm-spacing)/2) 0 calc(var(--rhythm-spacing)/2) var(--rhythm-spacing);
   margin: 0 0 var(--rhythm-spacing) 0;
 }
 
-code {
-  display: block;
+pre {
   background-color: var(--color-page-accent);
 }
 
@@ -171,16 +176,16 @@ hr
 {
   margin: 0 auto var(--rhythm-spacing) auto;
   border: 0;
-  border-top: 1px solid var(--color-primary);
-  width: 21ch;
+  border-top: 4px solid var(--color-primary);
+  width: 23ch;
 }
 
 img, video
 {
   height: auto;
-  width: 100%;
-  margin-top: 0;
-  margin-bottom: var(--rhythm-spacing);
+  display: block;
+  max-width: 100%;
+  margin: 0 auto var(--rhythm-spacing) auto;
 }
 
 abbr[title]
@@ -196,7 +201,7 @@ fieldset
   padding: 0.35em 0.75em 0.625em;
 }
 
-button, input, optgroup, select, textarea
+button, input, optgroup, select, textarea, label
 {
   font-family: inherit;
   font-size: 1rem;
@@ -204,7 +209,27 @@ button, input, optgroup, select, textarea
   font-weight: 200;
   line-height: var(--line-height);
   text-transform: none;
-  margin: 0;
+  transition: 0.5s;
+  margin: 0 0 var(--rhythm-spacing) 0;
+}
+
+label {
+  font-family: inherit;
+  font-size: 1.2rem;
+  letter-spacing: 0.08rem;  
+  font-weight: 100;
+  line-height: var(--line-height);
+  text-transform: none;
+}
+
+input[type=checkbox] ~ label::before {
+  content: '\25FB';
+  color: var(--color-primary);
+}
+
+input[type=checkbox]:checked ~ label::before {
+  content: '\2612';
+  color: var(--color-primary);
 }
 
 legend
@@ -226,7 +251,7 @@ details > summary {
   font-size: 1.2rem;
   font-weight: 200;
   letter-spacing: 0.08rem;
-  border-bottom: 1px solid var(--color-primary);
+  border-bottom: 2px solid var(--color-primary);
 }
 
 summary::before {
@@ -248,7 +273,7 @@ details[open] > summary {
 }
 
 details[open] {
-  border-bottom: 1px solid var(--color-primary);
+  border-bottom: 2px solid var(--color-primary);
 }
 
 details > p {
@@ -276,6 +301,7 @@ th {
   letter-spacing: 0.08rem;
   font-size: 1.2rem;
   font-weight: 100;
+  color: var(--color-primary);
 }
 
 td {

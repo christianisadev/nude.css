@@ -8,9 +8,10 @@ footer {
 
 main {
     background-color: #ffffff;
+    display: flex;
     padding: 0 1rem 0 1rem;
     margin: 0 auto;
-    max-width: 70ch;
+    max-width: 69ch;
 }
 
 /* responsive should handle width below certain point */
